@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Noodle {
+	public static void main (String a[]){
+
+		double interation = Double.parseDouble(a[0]);
+		double length = Double.parseDouble(a[1]);
+
+		double count = 0;
+		double ratio = 0;
+		double n = 0;
+		int max = 3; // maximum number of cards
+		int maxmatches = 0;
+
+		double noodle[] = new double [max];
+		while (n < interation){
+			noodle[0] = Math.random() *length;
+			noodle[1] = Math.random() * (length - noodle[0]);
+			noodle[2] = length - noodle[0] - noodle [1];
+			Arrays.sort(noodle);
+			System.out.println(noodle[0]+" "+noodle[1]+" "+noodle[2]);
+			if (noodle[0] + noodle [1] > noodle[2]) count++;
+			n++;
+		}
+		System.out.println("\n\n"+count);
+		System.out.println(" PERCENTAGE AS A DECIAMAL ");
+		ratio = count / interation;
+		System.out.println("\n\n"+ratio);
+	}
+}
+
